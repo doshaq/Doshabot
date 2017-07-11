@@ -7,7 +7,7 @@ import asyncio
 GIPHY_API_KEY = "c510a9e0254649f6b3a460123d4f5b8d"
 
 
-filters = ['fuck','sex','penis','hentai','yaoi','pornhub','xnxx','oppai']
+filters = ['fuck','sex','penis','hentai','yaoi','pornhub','xnxx','oppai','pornhub','xnxx',]
 
 class images:
     def __init__(self, bot):
