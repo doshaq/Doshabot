@@ -14,6 +14,8 @@ class images:
         self.bot = bot
     @commands.command(pass_context=True, no_pm=True)
     async def gif(self, ctx, *keywords):
+        await self.bot.say("فيه مشكله بالصوره المسيئه لذالك الغيت الامر لاجل مستقبل")
+        return
         """Retrieves first search result from giphy"""
         if keywords:
             keywords = "+".join(keywords)
@@ -39,6 +41,9 @@ class images:
                 await self.bot.say("حصلت مشكله فالاتصال (ノ°Д°）ノ︵")
     @commands.command(pass_context=True, no_pm=True)
     async def gifr(self, ctx, *keywords):
+        await self.bot.say("فيه مشكله بالصوره المسيئه لذالك الغيت الامر لاجل مستقبل")
+        return
+
         """Retrieves a random gif from a giphy search"""
         if keywords:
             keywords = "+".join(keywords)

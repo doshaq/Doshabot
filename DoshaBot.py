@@ -21,7 +21,7 @@ else:
 
 initial_extensions = [
     'cogs.greatings',
-    #'cogs.images',
+    'cogs.images',
     'cogs.item_roll',
 ]
 discord_logger = logging.getLogger('discord')
