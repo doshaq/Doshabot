@@ -8,6 +8,7 @@ import logging
 import traceback
 import sys
 from collections import Counter
+import spice_api as spice
 
 description = """
 اهلا انا بوت دوشا صنعني اي مشكله تحصل كلمه.
@@ -23,6 +24,9 @@ initial_extensions = [
     'cogs.greatings',
     'cogs.images',
     'cogs.item_roll',
+    'cogs.MAL',
+    'cogs.msc',
+    'cogs.game',
 ]
 discord_logger = logging.getLogger('discord')
 discord_logger.setLevel(logging.CRITICAL)
@@ -31,7 +35,6 @@ log.setLevel(logging.INFO)
 handler = logging.FileHandler(filename='discord_Logger_Dosha-Bot.log', encoding='utf-8', mode='w')
 log.addHandler(handler)
 help_attrs = dict(hidden=True)
-
 prefix = ['?', '!', '\N{HEAVY EXCLAMATION MARK SYMBOL}','>>']
 bot = commands.Bot(command_prefix=prefix, description=description, pm_help=None, help_attrs=help_attrs)
 @bot.event
@@ -59,7 +62,7 @@ async def do(ctx, times : int, *, command):
     for i in range(times):
         await bot.process_commands(msg)
 def load_credentials():
-    with open('credentials.json') as f:
+    with open('cogs/utils/credentials.json') as f:
         return json.load(f)
 
 @bot.event
@@ -86,6 +89,7 @@ if __name__ == '__main__':
     bot.client_id = credentials['client_id']
     bot.carbon_key = credentials['carbon_key']
     #bot.bots_key = credentials['bots_key']
+    creds = spice.init_auth(credentials["mal_username"],credentials["mal_password"]) 
 
     if debug:
         initial_extensions.remove('cogs.carbonitex')
