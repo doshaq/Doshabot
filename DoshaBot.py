@@ -9,7 +9,6 @@ import traceback
 import sys
 from collections import Counter
 import spice_api as spice
-from cogs.utils.settings import Settings
 
 description = """
 اهلا انا بوت دوشا صنعني اي مشكله تحصل كلمه.
