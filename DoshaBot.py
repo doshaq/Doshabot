@@ -9,6 +9,7 @@ import traceback
 import sys
 from collections import Counter
 import spice_api as spice
+#from myanimelist.session import Session
 
 description = """
 اهلا انا بوت دوشا صنعني اي مشكله تحصل كلمه.
@@ -90,8 +91,8 @@ if __name__ == '__main__':
     bot.client_id = credentials['client_id']
     bot.carbon_key = credentials['carbon_key']
     #bot.bots_key = credentials['bots_key']
-    creds = spice.init_auth(credentials["mal_username"],credentials["mal_password"]) 
-
+    #creds = spice.init_auth(credentials["mal_username"],credentials["mal_password"]) 
+    #s = Session()
     if debug:
         initial_extensions.remove('cogs.carbonitex')
 
