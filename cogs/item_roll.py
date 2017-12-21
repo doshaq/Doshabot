@@ -23,9 +23,16 @@ class item_roll:
 		await self.bot.say(lenny)
 	@commands.command(pass_context=True)
 	async def roll(self,ctx,member: discord.Member = None):
-			if member is None:
-				member = ctx.message.author
-				dice   = random.randint(0,100)
-			await self.bot.say('{0.mention} rolled '.format(member) +  str(dice))
+		emote = ""
+		if member is None:
+			member = ctx.message.author
+			dice   = random.randint(0,100)
+			if dice >= 90:
+				emote=":shamrock:"
+			elif dice <= 30:
+				emote=":poop:"
+			else:
+				emote=":game_die:"
+			await self.bot.say('{0.mention} rolled : {1}  {2}'.format((member) , str(dice), emote))
 def setup(bot):
     bot.add_cog(item_roll(bot))

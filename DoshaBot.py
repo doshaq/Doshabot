@@ -29,6 +29,7 @@ initial_extensions = [
     'cogs.msc',
     'cogs.game',
     'cogs.music',
+    'cogs.roles',
 ]
 discord_logger = logging.getLogger('discord')
 discord_logger.setLevel(logging.CRITICAL)
